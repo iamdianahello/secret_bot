@@ -1,11 +1,8 @@
 import secret
-import asyncio
 import os
 from telethon import TelegramClient, events
-from telethon import utils
 from dotenv import load_dotenv
- 
-from dotenv import load_dotenv
+
 
 load_dotenv()
 BOT_TOKEN = os.getenv('BOT_TOKEN') 
@@ -18,7 +15,6 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
-    """Send a message when the command /start is issued."""
     await event.respond('Привет. Я просто учусь делать ботов, ничего интересного')
     raise events.StopPropagation
 
